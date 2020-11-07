@@ -2,10 +2,50 @@
 <html lang="ja" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>MyPortfolio</title>
+    <title>Flex-To-Do</title>
+    <script src="https://kit.fontawesome.com/16225e978a.js" crossorigin="anonymous"></script>
     <script src="js/main.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/style.css">
   </head>
+
   <body>
-      <h1>This is a sample.</h1>
+    <header>
+      <h1>Flex-To-Do</h1>
+      <nav class="headerNav">
+        <ul>
+          <li  id="about">
+            <i class="fa fa-info-circle "></i>About</li>
+          <li id="help">
+            <i class="fa fa-question-circle"></i>Help</li>
+          <li id="setting">
+            <i class="fa fa-gear "></i>Setting</li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="addTodo">
+      <form action="" class="createTodo">
+        <input type="text" id="ctodoText" name="ctodoText">
+        <input type="submit" id="ctdAdd" name="ctdAdd" value="追加">
+        <input type="date" id = "ctdDate" name="ctdDate">
+        <input type="time" name="ctdTime" id="ctdTime">
+      </form>
+    </div>
+
+    <div id="todoContainer">
+      <div id="todoTemplate">
+        <input type="checkbox" name="todoDone" class="todoDone">
+        <span class="todoText">This is a templete ToDo object.</span>
+        <span class="todoDate"> 2020/11/7</span>
+        <span class="todoTime">20:30</span>
+        <button><i class="fa fa-pencil "></i></button>
+        <button><i class="fa fa-close "></i></button>
+      </div>
+    </div>
+    
+    <footer>
+      made by YukiYama 2020
+      <a href="https://github.com/yuyuyukie"><i class="fa fa-github"></i> </a>
+    </footer>
   </body>
 </html>
