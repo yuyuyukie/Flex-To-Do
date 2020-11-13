@@ -2,29 +2,37 @@
 <html lang="ja" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=">
     <title>Flex-To-Do</title>
     <script src="https://kit.fontawesome.com/16225e978a.js" crossorigin="anonymous"></script>
     <script src="js/main.js" charset="utf-8"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;700&display=swap" rel="stylesheet"> <!-- NotoSansJP font -->
   </head>
 
   <body>
     <header>
-      <h1>Flex-To-Do</h1>
-      <nav class="headerNav">
+      <h1 id="title">Flex-To-Do</h1>
+      <nav id="headerNav">
         <ul>
-          <li  id="about">
-            <i class="fa fa-info-circle "></i>About</li>
-          <li id="help">
-            <i class="fa fa-question-circle"></i>Help</li>
-          <li id="setting">
-            <i class="fa fa-gear "></i>Setting</li>
+          <li class="DrowingButton" id="about">
+            <i class="fa fa-info-circle "></i>
+            <div class="headerNavDetail">About</div>
+          </li>
+          <li class="DrowingButton" id="help">
+            <i class="fa fa-question-circle"></i>
+            <div class="headerNavDetail">Help</div>
+          </li>
+          <li class="DrowingButton" id="setting">
+            <i class="fa fa-gear "></i>
+            <div class="headerNavDetail">Setting</div>
+          </li>
         </ul>
       </nav>
     </header>
-
-    <div id="addTodo">
-      <form action="" class="createTodo">
+    <div class="main">
+    <div id="todoCreator">
+      <form action="" class="ctodo">
         <input type="text" id="ctodoText" name="ctodoText">
         <input type="submit" id="ctdAdd" name="ctdAdd" value="追加">
         <input type="date" id = "ctdDate" name="ctdDate">
@@ -41,11 +49,22 @@
         <button><i class="fa fa-pencil "></i></button>
         <button><i class="fa fa-close "></i></button>
       </div>
+      <div id="todoTemplate">
+        <input type="checkbox" name="todoDone" class="todoDone">
+        <span class="todoText">This is a templete ToDo object.</span>
+        <span class="todoDate"> 2020/11/7</span>
+        <span class="todoTime">20:30</span>
+        <button><i class="fa fa-pencil "></i></button>
+        <button><i class="fa fa-close "></i></button>
+      </div>
     </div>
+  </div>
     
     <footer>
-      made by YukiYama 2020
-      <a href="https://github.com/yuyuyukie"><i class="fa fa-github"></i> </a>
+      <div class="footerContents">  
+        made by YukiYama 2020
+        <a href="https://github.com/yuyuyukie"><i class="fa fa-github"></i> </a>
+      </div>
     </footer>
   </body>
 </html>
