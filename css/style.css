@@ -6,8 +6,15 @@ body{
     font-family: 'Noto Sans JP',sans-serif;
 }
 
+#bodyWrapper{
+    display: flex;
+    width: auto;
+    height: 100vh;
+    flex-direction: column;
+}
+
 header{
-    width: 100vw;
+    width: 100%;
     display: flex;
     align-items: center;
     height: 50px;
@@ -74,12 +81,11 @@ header{
 /* footer */
 footer{
     display: flex;
-    position: fixed;
-    bottom: 0rem;
+    margin-block-start: auto;
     background-color: aquamarine;
     border: solid rgb(26, 179, 140);
     border-width: 1px 0px;
-    width: 100vw;
+    width: 100%;
     height: 30px;
     align-items: center;
     justify-content: center;

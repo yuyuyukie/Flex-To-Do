@@ -2,15 +2,15 @@
 <html lang="ja" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Flex-To-Do</title>
     <script src="https://kit.fontawesome.com/16225e978a.js" crossorigin="anonymous"></script>
-    <script src="js/main.js" charset="utf-8"></script>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;700&display=swap" rel="stylesheet"> <!-- NotoSansJP font -->
   </head>
 
   <body>
+    <div id="bodyWrapper">
     <header>
       <h1 id="title">Flex-To-Do</h1>
       <nav id="headerNav">
@@ -34,7 +34,7 @@
     <div id="todoCreator">
       <form action="" class="ctodo">
         <input type="text" id="ctodoText" name="ctodoText">
-        <input type="submit" id="ctdAdd" name="ctdAdd" value="追加">
+        <input type="button" id="ctdAdd" name="ctdAdd" value="追加">
         <input type="date" id = "ctdDate" name="ctdDate">
         <input type="time" name="ctdTime" id="ctdTime">
       </form>
@@ -66,5 +66,7 @@
         <a href="https://github.com/yuyuyukie"><i class="fa fa-github"></i> </a>
       </div>
     </footer>
+    </div>
+  <script src="js/main.js" charset="utf-8"></script>
   </body>
 </html>
