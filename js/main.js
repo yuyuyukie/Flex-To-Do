@@ -1,13 +1,31 @@
 "use strict";
 /* 
-TODO: todoのボタン押下時のevent追加
+## TODO
+* navのactive状態を作成
+* todo追加時の処理を実装
+* done属性で色分け
+* done状態の切り替え
+* 完了の表示/非表示切り替え
+* todoをオブジェクトとして格納
+* 削除処理
+* inputのクリアボタンの実装
+* todoContainerをulに変える、これをArrayで管理することでinsertBeforeでなくarrayのunshift,popを用いてappendChildで実装できる？
+
+## IMPLEMENTED
+* todoのENTERボタン押下時のevent追加
+
+## IDEA
+Features I want to add in future.
+* //のTODOやNOTEを表示させたい。
+
+## REMINDER
+仮置きなど、今後修正する必要性のある事項
+* todo追加時の仮処理を記述
+* todoのひな形
 */
 
 // 入力データ
 const todoText = document.querySelector("#ctodoText");
-if(todoText.value === ""){
-    todoText.value = "Nameless TODO";
-}
 const todoDate = document.querySelector("#ctdDate");
 const todoTime = document.querySelector("#ctdTime");
 
@@ -19,12 +37,12 @@ function addNewTodo() {
     // コンテナとその現在の最上位の子の参照を取得
     const todoContainer = document.body.querySelector("#todoContainer");
     const currentTopTodo = todoContainer.firstChild;
-    // TODO: checkboxとtextの感覚が違うのが謎
-
+    
     // 取得した値を引数をひな形に流し込みます
     const newTodo = fillTemplate();
-
+    
     // 入力部の消去とfocus()
+    // TODO: checkboxとtextの感覚が違うのが謎
     clearForm();
     todoText.focus();
 
@@ -34,6 +52,7 @@ function addNewTodo() {
 // NOTE: addNewTodo内で定義すべきかわからない
 // NOTE: ひな形をどう構成すればいいかわからない
 // TODO: 見た目が悪い
+// TODO: 変更可能にする（editButtonはどうするか）
 // fillTemplate内でどこまでやるか
 function fillTemplate(){
     const parent = document.createElement("div");
@@ -49,7 +68,15 @@ function fillTemplate(){
     
     // todoText
     const textSpan = document.createElement("span");
-    textSpan.textContent = todoText.value;
+    textSpan.textContent = (() => { //iifeとアロー関数
+        // ctodoTextが空白なら名前を与える
+        if(todoText.value === ""){
+            return "名無しのTODO";
+        }else{
+            return todoText.value;
+        };
+    })();
+    
     textSpan.setAttribute("class", "todoDate");
     parentChildren.push(textSpan);
     
@@ -94,3 +121,9 @@ function clearForm() {
 
 const addButton = document.querySelector("#ctdAdd");
 addButton.addEventListener('click', addNewTodo);
+window.addEventListener("keydown", (event) => {
+    if(event.key === "Enter"){
+        addNewTodo();
+    }
+    return;
+});
