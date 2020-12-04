@@ -18,47 +18,47 @@
         <ul>
           <li class="DrowingButton" id="about">
             <i class="fa fa-info-circle "></i>
-            <div class="headerNavDetail">About</div>
-          </li>
-          <li class="DrowingButton" id="help">
-            <i class="fa fa-question-circle"></i>
-            <div class="headerNavDetail">Help</div>
-          </li>
-          <li class="DrowingButton" id="setting">
-            <i class="fa fa-gear "></i>
-            <div class="headerNavDetail">Setting</div>
+            <div class="headerNavDetail">このアプリについて</div>
           </li>
         </ul>
       </nav>
     </header>
+    <div id="description" class="hidden">
+      <div>
+        Flex-To-Doは簡潔でわかりやすさを徹底してつくられたリマインダーアプリです。<br>
+        著者： <em>YukiYama</em>
+      </div>
+      <div>
+      <h2>このアプリの特徴</h2>
+      いたってシンプルなタスク管理アプリで、以下の機能を持ちます。
+      <ul>
+        <li>EnterキーによるToDoの追加(PCのみ)</li>
+        <li>入力欄への自動フォーカス</li>
+        <li>ToDoの表示切り替え</li>
+      </ul>
+      </div>
+    </div>
     <div class="main">
     <div id="todoCreator">
       <form action="" id="todoCreatorForm" onsubmit="return false;">
         <input type="text" id="ctodoText" name="ctodoText">
-        <input type="date" id = "ctdDate" name="ctdDate">
-        <input type="time" name="ctdTime" id="ctdTime">
-        <input type="button" id="ctdAdd" name="ctdAdd" value="追加">
+        <input type="date" id = "ctdDate" name="ctdDate" class="hidden">
+        <input type="time" name="ctdTime" id="ctdTime" class="hidden">
+        <button id="ctdAdd" name="ctdAdd">追加</button>
+        <button id="clearFormBtn">クリア</button>
+
       </form>
     </div>
-
-    <div id="todoContainer">
-      <div id="todoTemplate">
-        <input type="checkbox" name="todoDone" class="todoDone">
-        <span class="todoText">This is a templete ToDo object.</span>
-        <span class="todoDate"> 2020/11/7</span>
-        <span class="todoTime">20:30</span>
-        <button class="editButton"><i class="fa fa-pencil "></i></button>
-        <button class="deleteButton"><i class="fa fa-close "></i></button>
-      </div>
-      <div id="todoTemplate">
-        <input type="checkbox" name="todoDone" class="todoDone">
-        <span class="todoText">This is a templete ToDo object.</span>
-        <span class="todoDate"> 2020/11/7</span>
-        <span class="todoTime">20:30</span>
-        <button class="editButton"><i class="fa fa-pencil "></i></button>
-        <button class="deleteButton"><i class="fa fa-close "></i></button>
-      </div>
+    <div id="todoController">
+      <ul id="showOption">
+        <li id="showAll">すべて</li>
+        <li id="showActive">未完のみ</li>
+        <li id="showDone">完了のみ</li>
+      </ul>
+      <div id="clearDone">完了したものを消す</div>
     </div>
+    <ul id="todoContainer"></ul>
+    <ul id="doneContainer"></ul>
   </div>
     
     <footer>
